@@ -6,28 +6,28 @@
         }, 0);
     }
     function printOrder(order) {
-        console.log(`Don hang: ${order.orderId}`);
-        console.log(`Khach hang: ${order.customerName}`);
-        console.log(`San pham: `);
+        console.log(`Don hang ${order.orderId}`);
+        console.log(`Khach hang ${order.customerName}`);
+        console.log(`San pham`);
         order.items.forEach(item => {
-            console.log(`${item.product.name} x ${item.quantity} → ${item.product.price} VND`);
+            console.log(`${item.product.name} x ${item.quantity} -> ${item.product.price} VND`);
         });
-        console.log(`Tong cong: ${calculateOrderTotal(order)} VND`);
+        console.log(`Tong cong ${calculateOrderTotal(order)} VND`);
         if (order.note) {
-            console.log(`Ghi chu: ${order.note}`);
+            console.log(`Ghi chu ${order.note}`);
         }
     }
     const order = {
         orderId: "ORD123",
-        customerName: "Nguyễn Văn A",
-        note: "Giao hàng trong giờ hành chính",
+        customerName: "Nguyen Van A",
+        note: "Giao hang trong gio hanh chinh",
         items: [
             {
-                product: { readonlyId: "P01", name: "Áo sơ mi", price: 300000 },
+                product: { id: "P01", name: "Ao so mi", price: 300000 },
                 quantity: 2
             },
             {
-                product: { readonlyId: "P02", name: "Quần tây", price: 500000 },
+                product: { id: "P02", name: "Quan tay", price: 500000 },
                 quantity: 1
             }
         ]
